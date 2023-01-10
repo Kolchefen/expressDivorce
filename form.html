@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<script src="https://cdn01.jotfor.ms/static/prototype.forms.js?3.3.38511" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.38511" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.38511" type="text/javascript"></script>
+<script defer src="https://cdn01.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.38511" type="text/javascript"></script>
+<script defer src="https://cdn02.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.38511" type="text/javascript"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+<script src="https://cdn03.jotfor.ms/js/payments/paymentUtils.js?v=3.3.38511" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/square.js?v=3.3.38511" type="text/javascript"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+	JotForm.extendsNewTheme = false;
+	JotForm.singleProduct = true;
+	JotForm.newPaymentUIForNewCreatedForms = false;
+	JotForm.newPaymentUI = true;
+
+   JotForm.setConditions([{"action":[{"field":"9","visibility":"Show","id":"action_0_1579704830003"}],"id":"1579704830003","index":"0","link":"Any","priority":"0","terms":[{"field":"8","operator":"equals","value":"Other"}],"type":"field"}]);
+	JotForm.init(function(){
+	/*INIT-START*/
+JotForm.setFullNameAutoFocus(3)
+JotForm.setFullNameAutoFocus(20)
+JotForm.setFullNameAutoFocus(21)
+
+ JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+ JotForm.calendarOther = {"today":"Today"};
+ var languageOptions = document.querySelectorAll('#langList li'); 
+ for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("23", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
+ } 
+ JotForm.onTranslationsFetch(function() { JotForm.setCalendar("23", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
+if (window.JotForm && JotForm.accessible) $('input_24').setAttribute('tabindex',0);
+	  setTimeout(function() {
+		  $('input_24').hint('City, State');
+	   }, 20);
+if (window.JotForm && JotForm.accessible) $('input_25').setAttribute('tabindex',0);
+	  JotForm.setCustomHint( 'input_25', 'Child\'s full legal name - MM-DD-YYYY - City, State - Insurance - Tax Claimer                                                 Child\'s full legal name - MM-DD-YYYY - City, State - Insurance - Tax Claimer                                                 Child\'s full legal name - MM-DD-YYYY - City, State - Insurance - Tax Claimer                                                 Child\'s full legal name - MM-DD-YYYY - City, State - Insurance - Tax Claimer' );
+if (window.JotForm && JotForm.accessible) $('input_30').setAttribute('tabindex',0);
+	  JotForm.setCustomHint( 'input_30', 'Item - Amount - Payment Distribution (how much you want to pay/want them to pay' );
+	  JotForm.setPhoneMaskingValidator( 'input_32_full', '(###) ###-####' );
+	  setTimeout(function() {
+		  $('input_6').hint('ex: email@yahoo.com');
+	   }, 20);
+	  productID = {"0":"input_31_1000"};
+	  paymentType = "product";
+	  JotForm.setCurrencyFormat('USD',true, 'point');
+	  JotForm.totalCounter({"input_31_1000":{"price":"250"}});
+	  $$('.form-product-custom_quantity').each(function(el, i){el.observe('blur', function(){isNaN(this.value) || this.value < 1 ? this.value = '0' : this.value = parseInt(this.value)})});
+	  $$('.form-product-custom_quantity').each(function(el, i){el.observe('focus', function(){this.value == 0 ? this.value = '' : this.value})});
+	  JotForm.handleProductLightbox();
+	/*INIT-END*/
+	});
+
+   JotForm.prepareCalculationsOnTheFly([null,{"name":"clickTo","qid":"1","text":"Divorce with children:","type":"control_head"},{"name":"submit","qid":"2","text":"Submit","type":"control_button"},{"name":"fullName3","qid":"3","text":"Full Current Legal Name","type":"control_fullname"},{"name":"address4","qid":"4","text":"Your Current Address","type":"control_address"},null,{"name":"email6","qid":"6","subLabel":"example@example.com","text":"E-mail","type":"control_email"},null,null,null,null,null,null,null,null,null,{"name":"divider","qid":"16","text":"Divider","type":"control_divider"},{"name":"image","qid":"17","text":"logo.63b5f141a37c55.67185460","type":"control_image"},{"name":"input18","qid":"18","text":"\nExpress Divorce\nFor additional inquiry call: \n(580)-656-2669\n","type":"control_text"},null,{"description":"","name":"name","qid":"20","text":"If you selected yes, Please enter the name you wish to return to:","type":"control_fullname"},{"description":"","name":"yourSpouses","qid":"21","text":"Your Spouse's Full Legal Name","type":"control_fullname"},{"description":"","name":"yourSpouses22","qid":"22","text":"Your Spouse's current address, If unknown leave blank","type":"control_address"},{"description":"","name":"dateOf","qid":"23","text":"Date of Marriage","type":"control_datetime"},{"description":"","name":"cityAnd","qid":"24","subLabel":"","text":"City and State of Marriage","type":"control_textbox"},{"description":"","name":"enterEvery","qid":"25","subLabel":"","text":"Enter Every Child's Name, Date of Birth, City and State of Birth, Child Insurance Provider, and who will be claiming them for taxes each year. If you are unsure of any of these items type UNK.","type":"control_textarea"},null,null,{"description":"","name":"willThe","qid":"28","text":"Will the Mother be the Sole Custodial Parent?","type":"control_radio"},{"description":"","name":"doYou","qid":"29","text":"Do you wish to return your name to what it was before the marriage?","type":"control_radio"},{"description":"","name":"listAny","qid":"30","subLabel":"","text":"List any assets or debts  (vehicles, credit cards, etc) that you want specifically addressed in the divorce","type":"control_textarea"},{"description":"","name":"payOnline","qid":"31","text":"Pay Online - if you wish to pay over the phone later, please ","type":"control_square"},{"description":"","name":"phoneNumber","qid":"32","text":"Phone Number","type":"control_phone"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,{"name":"clickTo","qid":"1","text":"Divorce with children:","type":"control_head"},{"name":"submit","qid":"2","text":"Submit","type":"control_button"},{"name":"fullName3","qid":"3","text":"Full Current Legal Name","type":"control_fullname"},{"name":"address4","qid":"4","text":"Your Current Address","type":"control_address"},null,{"name":"email6","qid":"6","subLabel":"example@example.com","text":"E-mail","type":"control_email"},null,null,null,null,null,null,null,null,null,{"name":"divider","qid":"16","text":"Divider","type":"control_divider"},{"name":"image","qid":"17","text":"logo.63b5f141a37c55.67185460","type":"control_image"},{"name":"input18","qid":"18","text":"\nExpress Divorce\nFor additional inquiry call: \n(580)-656-2669\n","type":"control_text"},null,{"description":"","name":"name","qid":"20","text":"If you selected yes, Please enter the name you wish to return to:","type":"control_fullname"},{"description":"","name":"yourSpouses","qid":"21","text":"Your Spouse's Full Legal Name","type":"control_fullname"},{"description":"","name":"yourSpouses22","qid":"22","text":"Your Spouse's current address, If unknown leave blank","type":"control_address"},{"description":"","name":"dateOf","qid":"23","text":"Date of Marriage","type":"control_datetime"},{"description":"","name":"cityAnd","qid":"24","subLabel":"","text":"City and State of Marriage","type":"control_textbox"},{"description":"","name":"enterEvery","qid":"25","subLabel":"","text":"Enter Every Child's Name, Date of Birth, City and State of Birth, Child Insurance Provider, and who will be claiming them for taxes each year. If you are unsure of any of these items type UNK.","type":"control_textarea"},null,null,{"description":"","name":"willThe","qid":"28","text":"Will the Mother be the Sole Custodial Parent?","type":"control_radio"},{"description":"","name":"doYou","qid":"29","text":"Do you wish to return your name to what it was before the marriage?","type":"control_radio"},{"description":"","name":"listAny","qid":"30","subLabel":"","text":"List any assets or debts  (vehicles, credit cards, etc) that you want specifically addressed in the divorce","type":"control_textarea"},{"description":"","name":"payOnline","qid":"31","text":"Pay Online - if you wish to pay over the phone later, please ","type":"control_square"},{"description":"","name":"phoneNumber","qid":"32","text":"Phone Number","type":"control_phone"}]);}, 20); 
+</script>
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5eb3b4ae85bd2e1e2966db96"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.38511" />
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.38511" />
+<style type="text/css" id="form-designer-style">
+	/* Injected CSS Code */
+/*PREFERENCES STYLE*/
+	.form-all {
+	  font-family: Inter, sans-serif;
+	}
+	.form-all .qq-upload-button,
+	.form-all .form-submit-button,
+	.form-all .form-submit-reset,
+	.form-all .form-submit-print {
+	  font-family: Inter, sans-serif;
+	}
+	.form-all .form-pagebreak-back-container,
+	.form-all .form-pagebreak-next-container {
+	  font-family: Inter, sans-serif;
+	}
+	.form-header-group {
+	  font-family: Inter, sans-serif;
+	}
+	.form-label {
+	  font-family: Inter, sans-serif;
+	}
+  
+	.form-label.form-label-auto {
+	  
+	display: block;
+	float: none;
+	text-align: left;
+	width: 100%;
+  
+	}
+  
+	.form-line {
+	  margin-top: 12px 36px 12px 36px px;
+	  margin-bottom: 12px 36px 12px 36px px;
+	}
+  
+	.form-all {
+	  max-width: 752px;
+	  width: 100%;
+	}
+  
+	.form-label.form-label-left,
+	.form-label.form-label-right,
+	.form-label.form-label-left.form-label-auto,
+	.form-label.form-label-right.form-label-auto {
+	  width: 230px;
+	}
+  
+	.form-all {
+	  font-size: 16px
+	}
+	.form-all .qq-upload-button,
+	.form-all .qq-upload-button,
+	.form-all .form-submit-button,
+	.form-all .form-submit-reset,
+	.form-all .form-submit-print {
+	  font-size: 16px
+	}
+	.form-all .form-pagebreak-back-container,
+	.form-all .form-pagebreak-next-container {
+	  font-size: 16px
+	}
+  
+	.supernova .form-all, .form-all {
+	  background-color: #fff;
+	}
+  
+	.form-all {
+	  color: #2C3345;
+	}
+	.form-header-group .form-header {
+	  color: #2C3345;
+	}
+	.form-header-group .form-subHeader {
+	  color: #2C3345;
+	}
+	.form-label-top,
+	.form-label-left,
+	.form-label-right,
+	.form-html,
+	.form-checkbox-item label,
+	.form-radio-item label,
+	span.FITB .qb-checkbox-label,
+	span.FITB .qb-radiobox-label,
+	span.FITB .form-radio label,
+	span.FITB .form-checkbox label,
+	[data-blotid][data-type=checkbox] [data-labelid],
+	[data-blotid][data-type=radiobox] [data-labelid],
+	span.FITB-inptCont[data-type=checkbox] label,
+	span.FITB-inptCont[data-type=radiobox] label {
+	  color: #2C3345;
+	}
+	.form-sub-label {
+	  color: #464d5f;
+	}
+  
+	.supernova {
+	  background-color: #659cdb;
+	}
+	.supernova body {
+	  background: transparent;
+	}
+  
+	.form-textbox,
+	.form-textarea,
+	.form-dropdown,
+	.form-radio-other-input,
+	.form-checkbox-other-input,
+	.form-captcha input,
+	.form-spinner input {
+	  background-color: #fff;
+	}
+  
+	.supernova {
+	  background-image: none;
+	}
+	#stage {
+	  background-image: none;
+	}
+  
+	.form-all {
+	  background-image: none;
+	}
+  
+  .ie-8 .form-all:before { display: none; }
+  .ie-8 {
+	margin-top: auto;
+	margin-top: initial;
+  }
+  
+  /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/.form-header-group.header-small {
+	padding: 20px 52px !important;
+	border-radius : 6px 6px 0 0;
+	border-top: 1px solid #eee;
+	margin: 0 -38px;
+	border-bottom: 0;
+}
+
+.form-header-group.header-small h3 {
+	text-transform : uppercase;
+	font-size : 26px;
+	font-weight : 400;
+	text-align : left;
+}
+	/* Injected CSS Code */
+</style>
+
+<form class="jotform-form" action="https://submit.jotform.com/submit/230036027146142/" method="post" name="form_230036027146142" id="230036027146142" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID" value="230036027146142" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden" id="cardinalOrderNumber" value="" />
+  <div role="main" class="form-all">
+	<div class="formLogoWrapper Center">
+	  <img loading="lazy" class="formLogoImg" src="https://www.jotform.com/uploads/guest_902b7e9b2ec7cc6c/form_files/logo.63b5f11d0ee0f8.12452640.png" height="140" width="189">
+	</div>
+	<style>
+	  .formLogoWrapper
+	  {
+		display: inline-block;
+		position: absolute;
+		width: 100%;
+	  }
+
+	  .form-all:before
+	  {
+		background: none !important;
+	  }
+
+	  .formLogoWrapper.Center
+	  {
+		top: -150px;
+		text-align: center;
+	  }
+	</style>
+	<ul class="form-section page-section">
+	  <li class="form-line form-line-column form-col-1" data-type="control_image" id="id_17">
+		<div id="cid_17" class="form-input-wide" data-layout="full"> <img alt="" loading="lazy" class="form-image" style="border:0" src="https://www.jotform.com/uploads/guest_902b7e9b2ec7cc6c/form_files/logo.63b5f141a37c55.67185460.png" height="0px" width="175px" data-component="image" /> </div>
+	  </li>
+	  <li class="form-line form-line-column form-col-2" data-type="control_text" id="id_18">
+		<div id="cid_18" class="form-input-wide" data-layout="full">
+		  <div id="text_18" class="form-html" data-component="text" tabindex="0">
+			<div style="line-height: 18px; text-align: right; padding-top: 24px;">
+			  <div style="font-size: 12pt;"><strong>Express Divorce<br /></strong></div>
+			  <div style="font-size: 12pt;"><span style="font-size: 10pt;">For additional inquiry call: </span></div>
+			  <div style="font-size: 12pt;"><span style="font-size: 10pt;">(580)-656-2669</span><strong><br /></strong></div>
+			</div>
+		  </div>
+		</div>
+	  </li>
+	  <li id="cid_1" class="form-input-wide" data-type="control_head">
+		<div class="form-header-group  header-small">
+		  <div class="header-text httal htvam">
+			<h3 id="header_1" class="form-header" data-component="header">Divorce with children:</h3>
+			<div id="subHeader_1" class="form-subHeader">Fill out this form if you wish to use our services AND you had children WITH the spouse.</div>
+		  </div>
+		</div>
+	  </li>
+	  <li class="form-line jf-required" data-type="control_fullname" id="id_3"><label class="form-label form-label-top form-label-extended form-label-auto" id="label_3" for="prefix_3"> Full Current Legal Name<span class="form-required">*</span> </label>
+		<div id="cid_3" class="form-input-wide jf-required" data-layout="full">
+		  <div data-wrapper-react="true" class="extended"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix"><select data-component="prefix" name="q3_fullName3[prefix]" id="prefix_3" class="dropdown-match-height form-dropdown validate[required]" aria-labelledby="label_3 sublabel_3_prefix" autoComplete="section-input_3 honorific-prefix">
+				<option value="Mr.">Mr.</option>
+				<option value="Mrs.">Mrs.</option>
+				<option value="Miss.">Miss.</option>
+				<option value="Ms.">Ms.</option>
+				<option value="Mx.">Mx.</option>
+				<option value="Dr.">Dr.</option>
+				<option value="Sir.">Sir.</option>
+				<option value="Dame.">Dame.</option>
+				<option value="Cllr.">Cllr.</option>
+				<option value="Lady.">Lady.</option>
+				<option value="Lord.">Lord.</option>
+				<option value=""></option>
+			  </select> <label class="form-sub-label" for="prefix_3" id="sublabel_3_prefix" style="min-height:13px" aria-hidden="false">Prefix</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_3" name="q3_fullName3[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 given-name" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" required="" /> <label class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle"><input type="text" id="middle_3" name="q3_fullName3[middle]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 additional-name" size="10" value="" data-component="middle" aria-labelledby="label_3 sublabel_3_middle" required="" /> <label class="form-sub-label" for="middle_3" id="sublabel_3_middle" style="min-height:13px" aria-hidden="false">Middle Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_3" name="q3_fullName3[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 family-name" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" required="" /> <label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px" aria-hidden="false">Last Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="suffix"><input type="text" id="suffix_3" name="q3_fullName3[suffix]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 honorific-suffix" size="4" value="" data-component="suffix" aria-labelledby="label_3 sublabel_3_suffix" required="" /> <label class="form-sub-label" for="suffix_3" id="sublabel_3_suffix" style="min-height:13px" aria-hidden="false">Suffix</label></span></div>
+		</div>
+	  </li>
+	  <li class="form-line jf-required" data-type="control_radio" id="id_29"><label class="form-label form-label-top form-label-auto" id="label_29" for="input_29"> Do you wish to return your name to what it was before the marriage?<span class="form-required">*</span> </label>
+		<div id="cid_29" class="form-input-wide jf-required" data-layout="full">
+		  <div class="form-single-column" role="group" aria-labelledby="label_29" data-component="radio"><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_29" class="form-radio validate[required]" id="input_29_0" name="q29_doYou" value="Yes" required="" /><label id="label_input_29_0" for="input_29_0">Yes</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_29" class="form-radio validate[required]" id="input_29_1" name="q29_doYou" value="No" required="" /><label id="label_input_29_1" for="input_29_1">No</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_29" class="form-radio validate[required]" id="input_29_2" name="q29_doYou" value="Name did not change for marriage" required="" /><label id="label_input_29_2" for="input_29_2">Name did not change for marriage</label></span></div>
+		</div>
+	  </li>
+	  <li class="form-line" data-type="control_fullname" id="id_20"><label class="form-label form-label-top form-label-extended form-label-auto" id="label_20" for="prefix_20"> If you selected yes, Please enter the name you wish to return to: </label>
+		<div id="cid_20" class="form-input-wide" data-layout="full">
+		  <div data-wrapper-react="true" class="extended"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix"><select data-component="prefix" name="q20_name[prefix]" id="prefix_20" class="dropdown-match-height form-dropdown" aria-labelledby="label_20 sublabel_20_prefix" autoComplete="section-input_20 honorific-prefix">
+				<option value="Mr.">Mr.</option>
+				<option value="Mrs.">Mrs.</option>
+				<option value="Miss.">Miss.</option>
+				<option value="Ms.">Ms.</option>
+				<option value="Mx.">Mx.</option>
+				<option value="Dr.">Dr.</option>
+				<option value="Sir.">Sir.</option>
+				<option value="Dame.">Dame.</option>
+				<option value="Cllr.">Cllr.</option>
+				<option value="Lady.">Lady.</option>
+				<option value="Lord.">Lord.</option>
+				<option value=""></option>
+			  </select> <label class="form-sub-label" for="prefix_20" id="sublabel_20_prefix" style="min-height:13px" aria-hidden="false">Prefix</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_20" name="q20_name[first]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_20 given-name" size="10" value="" data-component="first" aria-labelledby="label_20 sublabel_20_first" /> <label class="form-sub-label" for="first_20" id="sublabel_20_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle"><input type="text" id="middle_20" name="q20_name[middle]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_20 additional-name" size="10" value="" data-component="middle" aria-labelledby="label_20 sublabel_20_middle" /> <label class="form-sub-label" for="middle_20" id="sublabel_20_middle" style="min-height:13px" aria-hidden="false">Middle Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_20" name="q20_name[last]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_20 family-name" size="15" value="" data-component="last" aria-labelledby="label_20 sublabel_20_last" /> <label class="form-sub-label" for="last_20" id="sublabel_20_last" style="min-height:13px" aria-hidden="false">Last Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="suffix"><input type="text" id="suffix_20" name="q20_name[suffix]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_20 honorific-suffix" size="4" value="" data-component="suffix" aria-labelledby="label_20 sublabel_20_suffix" /> <label class="form-sub-label" for="suffix_20" id="sublabel_20_suffix" style="min-height:13px" aria-hidden="false">Suffix</label></span></div>
+		</div>
+	  </li>
+	  <li class="form-line jf-required" data-type="control_address" id="id_4"><label class="form-label form-label-top form-label-auto" id="label_4" for="input_4_addr_line1"> Your Current Address<span class="form-required">*</span> </label>
+		<div id="cid_4" class="form-input-wide jf-required" data-layout="full">
+		  <div summary="" class="form-address-table jsTest-addressField">
+			<div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-street-line jsTest-address-lineField"><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_4_addr_line1" name="q4_address4[addr_line1]" class="form-textbox validate[required] form-address-line" data-defaultvalue="" autoComplete="section-input_4 address-line1" value="" data-component="address_line_1" aria-labelledby="label_4 sublabel_4_addr_line1" required="" /> <label class="form-sub-label" for="input_4_addr_line1" id="sublabel_4_addr_line1" style="min-height:13px" aria-hidden="false">Street Address</label></span></span></div>
+			<div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-street-line jsTest-address-lineField"><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_4_addr_line2" name="q4_address4[addr_line2]" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_4 address-line2" value="" data-component="address_line_2" aria-labelledby="label_4 sublabel_4_addr_line2" /> <label class="form-sub-label" for="input_4_addr_line2" id="sublabel_4_addr_line2" style="min-height:13px" aria-hidden="false">Street Address Line 2</label></span></span></div>
+			<div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-city-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_4_city" name="q4_address4[city]" class="form-textbox validate[required] form-address-city" data-defaultvalue="" autoComplete="section-input_4 address-level2" value="" data-component="city" aria-labelledby="label_4 sublabel_4_city" required="" /> <label class="form-sub-label" for="input_4_city" id="sublabel_4_city" style="min-height:13px" aria-hidden="false">City</label></span></span><span class="form-address-line form-address-state-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_4_state" name="q4_address4[state]" class="form-textbox validate[required] form-address-state" data-defaultvalue="" autoComplete="section-input_4 address-level1" value="" data-component="state" aria-labelledby="label_4 sublabel_4_state" required="" /> <label class="form-sub-label" for="input_4_state" id="sublabel_4_state" style="min-height:13px" aria-hidden="false">State / Province</label></span></span></div>
+			<div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-zip-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_4_postal" name="q4_address4[postal]" class="form-textbox validate[required] form-address-postal" data-defaultvalue="" autoComplete="section-input_4 postal-code" value="" data-component="zip" aria-labelledby="label_4 sublabel_4_postal" required="" /> <label class="form-sub-label" for="input_4_postal" id="sublabel_4_postal" style="min-height:13px" aria-hidden="false">Postal / Zip Code</label></span></span></div>
+		  </div>
+		</div>
+	  </li>
+	  <li class="form-line jf-required" data-type="control_fullname" id="id_21"><label class="form-label form-label-top form-label-extended form-label-auto" id="label_21" for="prefix_21"> Your Spouse's Full Legal Name<span class="form-required">*</span> </label>
+		<div id="cid_21" class="form-input-wide jf-required" data-layout="full">
+		  <div data-wrapper-react="true" class="extended"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix"><select data-component="prefix" name="q21_yourSpouses[prefix]" id="prefix_21" class="dropdown-match-height form-dropdown validate[required]" aria-labelledby="label_21 sublabel_21_prefix" autoComplete="section-input_21 honorific-prefix">
+				<option value="Mr.">Mr.</option>
+				<option value="Mrs.">Mrs.</option>
+				<option value="Miss.">Miss.</option>
+				<option value="Ms.">Ms.</option>
+				<option value="Mx.">Mx.</option>
+				<option value="Dr.">Dr.</option>
+				<option value="Sir.">Sir.</option>
+				<option value="Dame.">Dame.</option>
+				<option value="Cllr.">Cllr.</option>
+				<option value="Lady.">Lady.</option>
+				<option value="Lord.">Lord.</option>
+				<option value=""></option>
+			  </select> <label class="form-sub-label" for="prefix_21" id="sublabel_21_prefix" style="min-height:13px" aria-hidden="false">Prefix</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_21" name="q21_yourSpouses[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_21 given-name" size="10" value="" data-component="first" aria-labelledby="label_21 sublabel_21_first" required="" /> <label class="form-sub-label" for="first_21" id="sublabel_21_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle"><input type="text" id="middle_21" name="q21_yourSpouses[middle]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_21 additional-name" size="10" value="" data-component="middle" aria-labelledby="label_21 sublabel_21_middle" required="" /> <label class="form-sub-label" for="middle_21" id="sublabel_21_middle" style="min-height:13px" aria-hidden="false">Middle Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_21" name="q21_yourSpouses[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_21 family-name" size="15" value="" data-component="last" aria-labelledby="label_21 sublabel_21_last" required="" /> <label class="form-sub-label" for="last_21" id="sublabel_21_last" style="min-height:13px" aria-hidden="false">Last Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="suffix"><input type="text" id="suffix_21" name="q21_yourSpouses[suffix]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_21 honorific-suffix" size="4" value="" data-component="suffix" aria-labelledby="label_21 sublabel_21_suffix" required="" /> <label class="form-sub-label" for="suffix_21" id="sublabel_21_suffix" style="min-height:13px" aria-hidden="false">Suffix</label></span></div>
+		</div>
+	  </li>
+	  <li class="form-line" data-type="control_address" id="id_22" data-compound-hint=",,,,Please Select,,Please Select,"><label class="form-label form-label-top form-label-auto" id="label_22" for="input_22_addr_line1"> Your Spouse's current address, If unknown leave blank </label>
+		<div id="cid_22" class="form-input-wide" data-layout="full">
+		  <div summary="" class="form-address-table jsTest-addressField">
+			<div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-street-line jsTest-address-lineField"><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_22_addr_line1" name="q22_yourSpouses22[addr_line1]" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_22 address-line1" value="" data-component="address_line_1" aria-labelledby="label_22 sublabel_22_addr_line1" required="" /> <label class="form-sub-label" for="input_22_addr_line1" id="sublabel_22_addr_line1" style="min-height:13px" aria-hidden="false">Street Address</label></span></span></div>
+			<div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-street-line jsTest-address-lineField"><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_22_addr_line2" name="q22_yourSpouses22[addr_line2]" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_22 address-line2" value="" data-component="address_line_2" aria-labelledby="label_22 sublabel_22_addr_line2" /> <label class="form-sub-label" for="input_22_addr_line2" id="sublabel_22_addr_line2" style="min-height:13px" aria-hidden="false">Street Address Line 2</label></span></span></div>
+			<div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-city-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_22_city" name="q22_yourSpouses22[city]" class="form-textbox form-address-city" data-defaultvalue="" autoComplete="section-input_22 address-level2" value="" data-component="city" aria-labelledby="label_22 sublabel_22_city" required="" /> <label class="form-sub-label" for="input_22_city" id="sublabel_22_city" style="min-height:13px" aria-hidden="false">City</label></span></span><span class="form-address-line form-address-state-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_22_state" name="q22_yourSpouses22[state]" class="form-textbox form-address-state" data-defaultvalue="" autoComplete="section-input_22 address-level1" value="" data-component="state" aria-labelledby="label_22 sublabel_22_state" required="" /> <label class="form-sub-label" for="input_22_state" id="sublabel_22_state" style="min-height:13px" aria-hidden="false">State / Province</label></span></span></div>
+			<div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-zip-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_22_postal" name="q22_yourSpouses22[postal]" class="form-textbox form-address-postal" data-defaultvalue="" autoComplete="section-input_22 postal-code" value="" data-component="zip" aria-labelledby="label_22 sublabel_22_postal" required="" /> <label class="form-sub-label" for="input_22_postal" id="sublabel_22_postal" style="min-height:13px" aria-hidden="false">Postal / Zip Code</label></span></span></div>
+		  </div>
+		</div>
+	  </li>
+	  <li class="form-line form-line-column form-col-1 jf-required" data-type="control_datetime" id="id_23"><label class="form-label form-label-top" id="label_23" for="lite_mode_23"> Date of Marriage<span class="form-required">*</span> </label>
+		<div id="cid_23" class="form-input-wide jf-required" data-layout="half">
+		  <div data-wrapper-react="true">
+			<div style="display:none"><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="month_23" name="q23_dateOf[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" required="" autoComplete="section-input_23 off" aria-labelledby="label_23 sublabel_23_month" /><span class="date-separate" aria-hidden="true"> -</span><label class="form-sub-label" for="month_23" id="sublabel_23_month" style="min-height:13px" aria-hidden="false">Month</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="day_23" name="q23_dateOf[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" required="" autoComplete="section-input_23 off" aria-labelledby="label_23 sublabel_23_day" /><span class="date-separate" aria-hidden="true"> -</span><label class="form-sub-label" for="day_23" id="sublabel_23_day" style="min-height:13px" aria-hidden="false">Day</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[required, limitDate]" id="year_23" name="q23_dateOf[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="" required="" autoComplete="section-input_23 off" aria-labelledby="label_23 sublabel_23_year" /> <label class="form-sub-label" for="year_23" id="sublabel_23_year" style="min-height:13px" aria-hidden="false">Year</label></span></div><span class="form-sub-label-container" style="vertical-align:top"><input type="text" class="form-textbox validate[required, limitDate, validateLiteDate]" id="lite_mode_23" size="12" data-maxlength="12" maxLength="12" data-age="" value="" required="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" autoComplete="section-input_23 off" aria-labelledby="label_23 sublabel_23_litemode" /><img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_23_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" /> <label class="form-sub-label" for="lite_mode_23" id="sublabel_23_litemode" style="min-height:13px" aria-hidden="false">Date</label></span>
+		  </div>
+		</div>
+	  </li>
+	  <li class="form-line form-line-column form-col-2 jf-required" data-type="control_textbox" id="id_24"><label class="form-label form-label-top" id="label_24" for="input_24"> City and State of Marriage<span class="form-required">*</span> </label>
+		<div id="cid_24" class="form-input-wide jf-required" data-layout="half"> <input type="text" id="input_24" name="q24_cityAnd" data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="City, State" data-component="textbox" aria-labelledby="label_24" required="" /> </div>
+	  </li>
+	  <li class="form-line form-line-column form-col-3 jf-required" data-type="control_radio" id="id_28"><label class="form-label form-label-top" id="label_28" for="input_28"> Will the Mother be the Sole Custodial Parent?<span class="form-required">*</span> </label>
+		<div id="cid_28" class="form-input-wide jf-required" data-layout="full">
+		  <div class="form-single-column" role="group" aria-labelledby="label_28" data-component="radio"><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_28" class="form-radio validate[required]" id="input_28_0" name="q28_willThe" value="Yes" required="" /><label id="label_input_28_0" for="input_28_0">Yes</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_28" class="form-radio validate[required]" id="input_28_1" name="q28_willThe" value="No" required="" /><label id="label_input_28_1" for="input_28_1">No</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_28" class="form-radio validate[required]" id="input_28_2" name="q28_willThe" value="I Do Not Know" required="" /><label id="label_input_28_2" for="input_28_2">I Do Not Know</label></span></div>
+		</div>
+	  </li>
+	  <li class="form-line jf-required" data-type="control_textarea" id="id_25"><label class="form-label form-label-top" id="label_25" for="input_25"> Enter Every Child's Name, Date of Birth, City and State of Birth, Child Insurance Provider, and who will be claiming them for taxes each year. If you are unsure of any of these items type UNK.<span class="form-required">*</span> </label>
+		<div id="cid_25" class="form-input-wide jf-required" data-layout="full"> <textarea id="input_25" class="form-textarea validate[required, AlphaNumeric]" name="q25_enterEvery" style="width:648px;height:163px" data-component="textarea" required="" aria-labelledby="label_25"></textarea> </div>
+	  </li>
+	  <li class="form-line" data-type="control_divider" id="id_16">
+		<div id="cid_16" class="form-input-wide" data-layout="full">
+		  <div class="divider" aria-label="Divider" data-component="divider" style="border-bottom-width:1px;border-bottom-style:solid;border-color:#ecedf3;height:1px;margin-left:0px;margin-right:0px;margin-top:5px;margin-bottom:5px"></div>
+		</div>
+	  </li>
+	  <li class="form-line" data-type="control_textarea" id="id_30"><label class="form-label form-label-top form-label-auto" id="label_30" for="input_30"> List any assets or debts (vehicles, credit cards, etc) that you want specifically addressed in the divorce </label>
+		<div id="cid_30" class="form-input-wide" data-layout="full"> <textarea id="input_30" class="form-textarea" name="q30_listAny" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_30"></textarea> </div>
+	  </li>
+	  <li class="form-line form-line-column form-col-1 jf-required" data-type="control_phone" id="id_32"><label class="form-label form-label-top" id="label_32" for="input_32_full"> Phone Number<span class="form-required">*</span> </label>
+		<div id="cid_32" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="tel" id="input_32_full" name="q32_phoneNumber[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue="" autoComplete="section-input_32 tel-national" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_32 sublabel_32_masked" required="" /> <label class="form-sub-label" for="input_32_full" id="sublabel_32_masked" style="min-height:13px" aria-hidden="false">Please enter a valid phone number.</label></span> </div>
+	  </li>
+	  <li class="form-line form-line-column form-col-2 jf-required" data-type="control_email" id="id_6"><label class="form-label form-label-top form-label-auto" id="label_6" for="input_6"> E-mail<span class="form-required">*</span> </label>
+		<div id="cid_6" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_6" name="q6_email6" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: email@yahoo.com" data-component="email" aria-labelledby="label_6 sublabel_input_6" required="" /> <label class="form-sub-label" for="input_6" id="sublabel_input_6" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+	  </li>
+	  <li class="form-line" data-type="control_square" id="id_31" data-payment="true"><label class="form-label form-label-top" id="label_31" for="input_31"> Pay Online - if you wish to pay over the phone later, please </label>
+		<div id="cid_31" class="form-input-wide" data-layout="full">
+		  <div data-wrapper-react="true" class="square-payment-wrapper" data-square-currency="USD">
+			<div data-wrapper-react="true" class="product-container-wrapper">
+			  <div class="filter-container"></div><input type="hidden" name="simple_fpc" data-payment_type="square" data-component="payment1" value="31" /><input type="hidden" name="payment_total_checksum" id="payment_total_checksum" data-component="payment2" />
+			  <div id="image-overlay" class="overlay-content" style="display:none"><img id="current-image" /><span class="lb-prev-button">prev</span><span class="lb-next-button">next</span><span class="lb-close-button">( X )</span><span class="image-overlay-product-container">
+				  <ul class="form-overlay-item" pid="1000" hasicon="false" hasimages="false" iconvalue=""></ul>
+				</span></div>
+			  <div data-wrapper-react="true"><span class="form-product-item hover-product-item  show_desc new_ui" categories="non-categorized" pid="1000" aria-labelledby="label_31">
+				  <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+					<div class="p_col">
+					  <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_31_1000" name="q31_payOnline[][id]" value="1000" />
+						<div class="checked"></div>
+						<div class="select_border"></div>
+					  </div>
+					</div>
+					<div class="p_image">
+					  <div role="img" aria-label="Express Divorce with Children" class="image_area null"></div>
+					</div>
+					<div for="input_31_1000" class="form-product-container"><span data-wrapper-react="true">
+						<div class="title_description"><span class="form-product-name" id="product-name-input_31_1000">Express Divorce with Children</span><span class="form-product-description" id="product-name-description-input_31_1000">This will stream line the process of Payment, and result in a faster divorce.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_31_1000_price">250.00</span></span></b></span>
+					  </span></div>
+					<div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+				  </div>
+				</span>
+				<div class="payment_footer new_ui ">
+				  <div class="total_area">
+					<div class="form-payment-total">
+					  <div id="total-text">Total</div>
+					  <div class="form-payment-price"><span data-wrapper-react="true">$<span id="payment_total">0.00</span></span></div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			  <hr />
+			</div>
+			<h4>Credit Card</h4>
+			<table style="margin:0px" id="square-creditcard" class="form-address-table payment-form-table square-cc-field" cellPadding="0" cellSpacing="0">
+			  <tr>
+				<td width="50%"><input type="text" id="input_31_cc_firstName" name="q31_payOnline[cc_firstName]" class="form-textbox cc_firstName" data-defaultvalue="" size="20" value="" placeholder="First Name" data-component="cc_firstName" /></td>
+				<td width="50%"><input type="text" id="input_31_cc_lastName" name="q31_payOnline[cc_lastName]" class="form-textbox cc_lastName" data-defaultvalue="" size="20" value="" placeholder="Last Name" data-component="cc_lastName" /></td>
+			  </tr>
+			  <tr class="if_cc_field">
+				<td colSpan="2" width="100%">
+			  <tr class="if_cc_field">
+				<td colSpan="2">
+				  <div id="card-container"></div>
+				</td>
+			  </tr>
+			  </td>
+			  </tr>
+			</table>
+			<div id="square_dummy" style="display:none;margin-bottom:15px" data-sandbox="false"></div>
+		  </div>
+		</div>
+	  </li>
+	  <li class="form-line" data-type="control_button" id="id_2">
+		<div id="cid_2" class="form-input-wide" data-layout="full">
+		  <div data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField"><button id="input_2" type="submit" class="form-submit-button form-submit-button-black_blue submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
+		</div>
+	  </li>
+	  <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
+	</ul>
+  </div>
+  <script>
+	JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <script>
+	JotForm.poweredByText = "Powered by Jotform";
+  </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="230036027146142" />
+  <script type="text/javascript">
+	var all_spc = document.querySelectorAll("form[id='230036027146142'] .si" + "mple" + "_spc");
+	for (var i = 0; i < all_spc.length; i++)
+	{
+	  all_spc[i].value = "230036027146142-230036027146142";
+	}
+  </script>
+  <div class="formFooter-heightMask"></div>
+</form><script type="text/javascript">JotForm.ownerView=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.38511"></script>
+<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.38511"></script>
