@@ -97,8 +97,13 @@ display: inline-block;
 margin: 3% 0 2% 2%;
 }
 
+main h1 {
+
+	
+}
+
 main p {
-font-size: 32px;
+font-size: 24pt;
 padding-bottom: 1%;	
 border-bottom: 2px ridge #FFD700;
 padding-left:1%;
@@ -161,8 +166,6 @@ display: inline-block;
 width: 45%;
 height: auto;
 padding: 2%;
-
-
 }
 
 .mbox2 {
@@ -215,4 +218,111 @@ nav ul li a:hover {
 	color: green;
 	border-bottom: 2px solid #FFD700;
 	border-radius: 2px;
+}
+
+
+@media (max-width:640px) {
+
+	header h1 {
+	font-size: 6vw;
+		
+	}
+	
+	header hr {
+	display: none;	
+	
+	}
+	
+	header img {
+	position: relative;
+	float: right;
+	z-index: 3;
+	margin: 1.5% 5% -4% 0;
+	width: 15%;
+	height: auto;
+	}
+	
+	nav {
+		
+		
+	}
+	
+	
+	nav ul li {
+	position: relative;
+	display: block;
+	margin: 0 2% 0 0;
+	width: 70%;
+	border-bottom: 1px solid #000000;
+	text-decoration: none;
+	text-align: center;
+	}
+	
+	main p {
+	font-size: 3vw;
+	
+	}
+	
+	main h1 {
+	font-size: 3.5vw;
+	
+		
+	}
+	
+	main a {
+	font-size: 3vw;	
+		
+	}
+
+	main ul li {
+	margin: 7% 0 2% 0; 
+		
+	}
+	
+	#mobile {
+	width: 80%;
+		
+	}
+	
+	.dotmar {
+	  position: absolute;
+	  padding: 2%;
+	  bottom: -4%;
+	  right: 39%;
+	}
+	
+	#sspad {
+	width: 95%;
+	height: auto;
+	padding: 4% 4% 12% 9%;
+	}
+
+	#mobile2{
+	position: relative;
+	float: right;
+	display: inline-block;
+	width: 80%;
+	height: auto;
+	padding: 2%;
+	position: relative;
+	overflow: auto;
+	padding: 2%;
+	margin: 7% 12% 0 0;
+	}
+	
+	#mobile3 {
+	cursor: pointer;
+	position: absolute;
+	top: 61px;
+	width: auto;
+	margin-top: 0px;
+	padding: 16px;
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	}	
+
 }
