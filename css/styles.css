@@ -258,6 +258,11 @@ nav ul li a:hover {
 	text-align: center;
 	}
 	
+	nav ul li a {
+	font-size: 3vw;
+	
+	}
+	
 	main p {
 	font-size: 3vw;
 	
