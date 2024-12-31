@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\.html$ /$1 [L,R=301]
+
+# Redirect root to home.html
+RewriteRule ^$ /home.html [L,R=301]
+
+DirectoryIndex home.html
