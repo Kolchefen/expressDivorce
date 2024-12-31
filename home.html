@@ -137,6 +137,10 @@
 			  dots[slideIndex-1].className += " active";
 			  timer = setTimeout(showSlides, 500000);
 			}
+
+			if (window.location.pathname.endsWith('.html')) {
+				window.location.replace('/home');
+			}
 			 
 		</script>
 		
