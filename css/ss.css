@@ -1,9 +1,6 @@
-/* ss css begin */
-
-
 /* Hide the images by default */
 .mySlides {
-  display: none;
+  display: none;
 }
 
 * {box-sizing:border-box}
@@ -70,7 +67,7 @@ right: 43%;
 }
 
 /* Number text (1/3 etc) */
-.numbertext {
+.numberText {
   display: none;
   color: #000000;
   font-size: 13px;
@@ -97,7 +94,7 @@ right: 43%;
 	background-color: #000000;
 }
 
-. active:hover {
+.active:hover {
   background-color: #717171;
 }
 
