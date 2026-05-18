@@ -1,140 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divorce with Children Form</title>
-    <link rel="stylesheet" href="./css/forms.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Divorce with Minor Children Intake Form</title>
+	<meta name="description" content="Submit your information to begin an uncontested divorce filing in Oklahoma. For couples with minor children.">
+	<link rel="icon" type="image/x-icon" href="image/favicon.ico">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Teko:wght@500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/modern.css">
 </head>
 <body>
-    <h1>Divorce with Children Form</h1>
-    <form action="#" method="POST">
-        <h2>Your Information</h2>
 
-        <label for="prefix">Prefix:</label>
-        <input type="text" id="prefix" name="prefix"><br>
+	<header class="site-header">
+		<div class="container">
+			<nav class="nav" data-nav aria-label="Primary">
+				<a class="brand" href="index.html">
+					<span class="brand__mark" aria-hidden="true">ED</span>
+					<span>Express Divorce</span>
+				</a>
 
-        <label for="firstName">First Name<span class="required">*</span>:</label>
-        <input type="text" id="firstName" name="firstName" required><br>
+				<button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
+					<svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+					<svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+				</button>
 
-        <label for="middleName">Middle Name:</label>
-        <input type="text" id="middleName" name="middleName"><br>
+				<ul class="nav__menu" id="primary-menu" data-nav-menu role="list">
+					<li><a class="nav__link" href="index.html">Home</a></li>
+					<li><a class="nav__link" href="divorce.html">Pricing</a></li>
+					<li><a class="nav__link" href="resources.html">Resources</a></li>
+					<li><a class="nav__link" href="disclaimer.html">Disclaimer</a></li>
+					<li><a class="nav__link" href="contact-us.html" aria-current="page">Contact</a></li>
+					<li class="nav__cta"><a class="btn btn--accent" href="contact-us.html">Start Online</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 
-        <label for="lastName">Last Name<span class="required">*</span>:</label>
-        <input type="text" id="lastName" name="lastName" required><br>
+	<main>
 
-        <label for="suffix">Suffix:</label>
-        <input type="text" id="suffix" name="suffix"><br>
+		<section class="hero">
+			<div class="container">
+				<div class="hero__inner">
+					<p class="eyebrow">Online intake</p>
+					<h1>Divorce with minor children</h1>
+					<p class="lead">Fill out this form if you and your spouse have one or more minor children together. Submission is free; online payment is optional and only expedites the process.</p>
+				</div>
+			</div>
+		</section>
 
-        <label for="returnName">Do you wish to return your name to what it was before the marriage?*:</label>
-        <select id="returnName" name="returnName" required>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select><br>
+		<section class="section">
+			<div class="container">
+				<form class="form form-page" data-form data-variant="divorceWith" novalidate>
 
-        <h3>If you selected yes, please enter the name you wish to return to:</h3>
+					<div class="form-actual">
 
-        <label for="returnPrefix">Prefix:</label>
-        <input type="text" id="returnPrefix" name="returnPrefix"><br>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Your information</h2>
+								<p>Full current legal name.</p>
+							</div>
+							<div class="form-grid form-grid--names">
+								<div class="field">
+									<label for="prefix">Prefix</label>
+									<select id="prefix" name="prefix">
+										<option value=""></option>
+										<option>Mr.</option><option>Mrs.</option><option>Miss.</option>
+										<option>Ms.</option><option>Mx.</option><option>Dr.</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="firstName">First name<span class="required">*</span></label>
+									<input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+								</div>
+								<div class="field">
+									<label for="middleName">Middle name</label>
+									<input type="text" id="middleName" name="middleName" autocomplete="additional-name">
+								</div>
+								<div class="field">
+									<label for="lastName">Last name<span class="required">*</span></label>
+									<input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+								</div>
+								<div class="field">
+									<label for="suffix">Suffix</label>
+									<input type="text" id="suffix" name="suffix" autocomplete="honorific-suffix">
+								</div>
+							</div>
+						</div>
 
-        <label for="returnFirstName">First Name:</label>
-        <input type="text" id="returnFirstName" name="returnFirstName"><br>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Name change</h2>
+								<p>Do you wish to return your name to what it was before the marriage?</p>
+							</div>
 
-        <label for="returnMiddleName">Middle Name:</label>
-        <input type="text" id="returnMiddleName" name="returnMiddleName"><br>
+							<fieldset class="fieldset-radios">
+								<legend class="sr-only">Name change preference</legend>
+								<label class="radio-option">
+									<input type="radio" name="nameChange" value="Yes" required>
+									<span>Yes, restore my prior name</span>
+								</label>
+								<label class="radio-option">
+									<input type="radio" name="nameChange" value="No" required>
+									<span>No, keep my current name</span>
+								</label>
+								<label class="radio-option">
+									<input type="radio" name="nameChange" value="Name did not change for marriage" required>
+									<span>My name did not change for the marriage</span>
+								</label>
+							</fieldset>
 
-        <label for="returnLastName">Last Name:</label>
-        <input type="text" id="returnLastName" name="returnLastName"><br>
+							<p class="field__help" style="margin-top: var(--space-4);">If yes, enter the name you wish to return to:</p>
+							<div class="form-grid form-grid--names" style="margin-top: var(--space-2);">
+								<div class="field">
+									<label for="newPrefix">Prefix</label>
+									<select id="newPrefix" name="newPrefix">
+										<option value=""></option>
+										<option>Mr.</option><option>Mrs.</option><option>Miss.</option>
+										<option>Ms.</option><option>Mx.</option><option>Dr.</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="newFirstName">First name</label>
+									<input type="text" id="newFirstName" name="newFirstName">
+								</div>
+								<div class="field">
+									<label for="newMiddleName">Middle name</label>
+									<input type="text" id="newMiddleName" name="newMiddleName">
+								</div>
+								<div class="field">
+									<label for="newLastName">Last name</label>
+									<input type="text" id="newLastName" name="newLastName">
+								</div>
+								<div class="field">
+									<label for="newSuffix">Suffix</label>
+									<input type="text" id="newSuffix" name="newSuffix">
+								</div>
+							</div>
+						</div>
 
-        <label for="returnSuffix">Suffix:</label>
-        <input type="text" id="returnSuffix" name="returnSuffix"><br>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Your current address</h2>
+							</div>
+							<div class="form-grid">
+								<div class="field">
+									<label for="streetAddress">Street address<span class="required">*</span></label>
+									<input type="text" id="streetAddress" name="streetAddress" autocomplete="address-line1" required>
+								</div>
+								<div class="field">
+									<label for="streetAddress2">Street address line 2</label>
+									<input type="text" id="streetAddress2" name="streetAddress2" autocomplete="address-line2">
+								</div>
+							</div>
+							<div class="form-grid form-grid--csz" style="margin-top: var(--space-4);">
+								<div class="field">
+									<label for="city">City<span class="required">*</span></label>
+									<input type="text" id="city" name="city" autocomplete="address-level2" required>
+								</div>
+								<div class="field">
+									<label for="state">State<span class="required">*</span></label>
+									<input type="text" id="state" name="state" autocomplete="address-level1" required>
+								</div>
+								<div class="field">
+									<label for="zipCode">Zip code<span class="required">*</span></label>
+									<input type="text" id="zipCode" name="zipCode" autocomplete="postal-code" required>
+								</div>
+							</div>
+						</div>
 
-        <h2>Your Current Address</h2>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Your spouse's information</h2>
+								<p>Full legal name.</p>
+							</div>
+							<div class="form-grid form-grid--names">
+								<div class="field">
+									<label for="spousePrefix">Prefix</label>
+									<select id="spousePrefix" name="spousePrefix">
+										<option value=""></option>
+										<option>Mr.</option><option>Mrs.</option><option>Miss.</option>
+										<option>Ms.</option><option>Mx.</option><option>Dr.</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="spouseFirstName">First name<span class="required">*</span></label>
+									<input type="text" id="spouseFirstName" name="spouseFirstName" required>
+								</div>
+								<div class="field">
+									<label for="spouseMiddleName">Middle name</label>
+									<input type="text" id="spouseMiddleName" name="spouseMiddleName">
+								</div>
+								<div class="field">
+									<label for="spouseLastName">Last name<span class="required">*</span></label>
+									<input type="text" id="spouseLastName" name="spouseLastName" required>
+								</div>
+								<div class="field">
+									<label for="spouseSuffix">Suffix</label>
+									<input type="text" id="spouseSuffix" name="spouseSuffix">
+								</div>
+							</div>
+						</div>
 
-        <label for="streetAddress">Street Address<span class="required">*</span>:</label>
-        <input type="text" id="streetAddress" name="streetAddress" required><br>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Your spouse's current address</h2>
+								<p>Leave blank if unknown.</p>
+							</div>
+							<div class="form-grid">
+								<div class="field">
+									<label for="spouseStreetAddress">Street address</label>
+									<input type="text" id="spouseStreetAddress" name="spouseStreetAddress">
+								</div>
+								<div class="field">
+									<label for="spouseStreetAddress2">Street address line 2</label>
+									<input type="text" id="spouseStreetAddress2" name="spouseStreetAddress2">
+								</div>
+							</div>
+							<div class="form-grid form-grid--csz" style="margin-top: var(--space-4);">
+								<div class="field">
+									<label for="spouseCity">City</label>
+									<input type="text" id="spouseCity" name="spouseCity">
+								</div>
+								<div class="field">
+									<label for="spouseState">State</label>
+									<input type="text" id="spouseState" name="spouseState">
+								</div>
+								<div class="field">
+									<label for="spouseZipCode">Zip code</label>
+									<input type="text" id="spouseZipCode" name="spouseZipCode">
+								</div>
+							</div>
+						</div>
 
-        <label for="streetAddress2">Street Address Line 2:</label>
-        <input type="text" id="streetAddress2" name="streetAddress2"><br>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Marriage information</h2>
+							</div>
+							<div class="form-grid form-grid--2">
+								<div class="field">
+									<label for="dateOfMarriage">Date of marriage<span class="required">*</span></label>
+									<input type="date" id="dateOfMarriage" name="dateOfMarriage" required>
+								</div>
+								<div class="field">
+									<label for="marriageLocation">City and state of marriage<span class="required">*</span></label>
+									<input type="text" id="marriageLocation" name="marriageLocation" placeholder="City, State" required>
+								</div>
+							</div>
+						</div>
 
-        <label for="city">City<span class="required">*</span>:</label>
-        <input type="text" id="city" name="city" required><br>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Custody</h2>
+							</div>
 
-        <label for="state">State<span class="required">*</span>:</label>
-        <input type="text" id="state" name="state" required><br>
+							<fieldset class="fieldset-radios">
+								<legend>Will the mother be the sole custodial parent?<span class="required">*</span></legend>
+								<label class="radio-option">
+									<input type="radio" name="soleCustodial" value="Yes" required>
+									<span>Yes</span>
+								</label>
+								<label class="radio-option">
+									<input type="radio" name="soleCustodial" value="No" required>
+									<span>No</span>
+								</label>
+							</fieldset>
+						</div>
 
-        <label for="zipCode">Zip Code<span class="required">*</span>:</label>
-        <input type="text" id="zipCode" name="zipCode" required><br>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Children's information</h2>
+								<p>For each child, list name, date of birth, city and state of birth, insurance provider, and who claims them on taxes each year. Type UNK if unsure of any field.</p>
+							</div>
+							<div class="field">
+								<label for="childrenInfo">Children's information<span class="required">*</span></label>
+								<textarea id="childrenInfo" name="childrenInfo" rows="6" required placeholder="Child's full legal name - MM-DD-YYYY - City, State - Insurance - Tax Claimer&#10;Child's full legal name - MM-DD-YYYY - City, State - Insurance - Tax Claimer"></textarea>
+							</div>
+						</div>
 
-        <h2>Your Spouse's Information</h2>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Assets and debts</h2>
+								<p>Optional. List any items you want specifically addressed.</p>
+							</div>
+							<div class="field">
+								<label for="assetsDebts">Assets and debts</label>
+								<textarea id="assetsDebts" name="assetsDebts" placeholder="Item, amount, payment distribution (how much you want to pay, how much you want them to pay)"></textarea>
+							</div>
+						</div>
 
-        <label for="spousePrefix">Prefix:</label>
-        <input type="text" id="spousePrefix" name="spousePrefix"><br>
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Contact information</h2>
+								<p>How we'll reach you about your filing.</p>
+							</div>
+							<div class="form-grid form-grid--2">
+								<div class="field">
+									<label for="phoneNumber">Phone number<span class="required">*</span></label>
+									<input type="tel" id="phoneNumber" name="phoneNumber" autocomplete="tel" placeholder="(000) 000-0000" required>
+								</div>
+								<div class="field">
+									<label for="email">Email<span class="required">*</span></label>
+									<input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+								</div>
+							</div>
+						</div>
 
-        <label for="spouseFirstName">First Name<span class="required">*</span>:</label>
-        <input type="text" id="spouseFirstName" name="spouseFirstName" required><br>
+						<div class="form-actions">
+							<button type="submit" class="btn btn--primary">Submit your information</button>
+							<a class="btn btn--ghost" href="contact-us.html">Cancel</a>
+						</div>
 
-        <label for="spouseMiddleName">Middle Name:</label>
-        <input type="text" id="spouseMiddleName" name="spouseMiddleName"><br>
+						<div class="form-status" data-form-status hidden></div>
 
-        <label for="spouseLastName">Last Name<span class="required">*</span>:</label>
-        <input type="text" id="spouseLastName" name="spouseLastName" required><br>
+					</div>
 
-        <label for="spouseSuffix">Suffix:</label>
-        <input type="text" id="spouseSuffix" name="spouseSuffix"><br>
+					<div class="form-success" role="status" aria-live="polite">
+						<div class="form-success__icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+						</div>
+						<h2>Thank you. Your information was received.</h2>
+						<p class="lead" style="margin-inline: auto;">We'll be in touch shortly to confirm next steps. If you have questions in the meantime, call (580) 656-2669.</p>
+						<p style="color: var(--color-text-muted); margin-top: var(--space-5);">Want to expedite your filing? You can pay your service fee online now.</p>
+						<div class="form-success__actions">
+							<a class="btn btn--accent" data-pay-btn href="#" hidden>Pay <span data-pay-price>$259.95</span> to expedite</a>
+							<a class="btn btn--ghost" href="index.html">Back to home</a>
+						</div>
+						<p style="color: var(--color-text-muted); font-size: 0.875rem; margin-top: var(--space-4);">If you'd also like to request that Oklahoma's automatic 90-day waiting period be waived, add <strong>$50</strong> for a total of <strong>$309.95</strong>. We'll confirm the correct amount once we review your submission. Call (580) 656-2669 with any questions.</p>
+					</div>
 
-        <h2>Your Spouse's Current Address (If unknown, leave blank)</h2>
+				</form>
+			</div>
+		</section>
 
-        <label for="spouseStreetAddress">Street Address:</label>
-        <input type="text" id="spouseStreetAddress" name="spouseStreetAddress"><br>
+	</main>
 
-        <label for="spouseStreetAddress2">Street Address Line 2:</label>
-        <input type="text" id="spouseStreetAddress2" name="spouseStreetAddress2"><br>
+	<footer class="site-footer">
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer__brand">
+					<h4>Express Divorce Services</h4>
+					<p>Oklahoma uncontested divorce and legal document preparation. Serving clients across the country since 2003.</p>
+				</div>
+				<div>
+					<h4>Site</h4>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="divorce.html">Pricing</a></li>
+						<li><a href="resources.html">Resources</a></li>
+						<li><a href="disclaimer.html">Disclaimer</a></li>
+						<li><a href="contact-us.html">Contact</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4>Contact</h4>
+					<ul>
+						<li><a href="tel:15806562669">(580) 656-2669</a></li>
+						<li><a href="mailto:lesliedawngolden@yahoo.com">Email us</a></li>
+					</ul>
+				</div>
+			</div>
+			<p class="footer__bottom">© 2003–2026 Express Divorce Services. All rights reserved.</p>
+		</div>
+	</footer>
 
-        <label for="spouseCity">City:</label>
-        <input type="text" id="spouseCity" name="spouseCity"><br>
+	<script src="src/nav.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script src="src/form-config.js"></script>
+	<script src="src/form.js" defer></script>
 
-        <label for="spouseState">State / Province:</label>
-        <input type="text" id="spouseState" name="spouseState"><br>
-
-        <label for="spouseZipCode">Postal / Zip Code:</label>
-        <input type="text" id="spouseZipCode" name="spouseZipCode"><br>
-
-        <h2>Marriage Information</h2>
-
-        <label for="dateOfMarriage">Date of Marriage:</label>
-        <input type="date" id="dateOfMarriage" name="dateOfMarriage" required><br>
-
-        <label for="marriageLocation">City and State of Marriage<span class="required">*</span>:</label>
-        <input type="text" id="marriageLocation" name="marriageLocation" required><br>
-
-        <h2>Custody Information</h2>
-
-        <label for="soleCustodial">Will the Mother be the Sole Custodial Parent?<span class="required">*</span>:</label>
-        <select id="soleCustodial" name="soleCustodial" required>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select><br>
-
-        <h2>Children's Information</h2>
-
-        <label for="childrenInfo">Enter Each Child's Name, Date of Birth, City and State of Birth, Child Insurance Provider, and who will claim them for taxes each year. If unsure of any, type UNK<span class="required">*</span>:</label><br>
-        <textarea id="childrenInfo" name="childrenInfo" rows="5" cols="50" required></textarea><br>
-
-        <h2>Assets and Debts</h2>
-
-        <label for="assetsDebts">List any assets or debts (vehicles, credit cards, etc.) you want specifically addressed in the divorce:</label><br>
-        <textarea id="assetsDebts" name="assetsDebts" rows="5" cols="50"></textarea><br>
-
-        <h2>Contact Information</h2>
-
-        <label for="phoneNumber">Phone Number<span class="required">*</span>:</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]{10}" placeholder="1234567890"><br>
-
-        <label for="email">E-mail<span class="required">*</span>:</label>
-        <input type="email" id="email" name="email" required placeholder="example@example.com"><br>
-
-        <input type="submit" value="Submit">
-    </form>
 </body>
 </html>
