@@ -16,7 +16,7 @@
 	<header class="site-header">
 		<div class="container">
 			<nav class="nav" data-nav aria-label="Primary">
-				<a class="brand" href="index.html">
+				<a class="brand" href="home">
 					<span class="brand__mark" aria-hidden="true">ED</span>
 					<span>Express Divorce</span>
 				</a>
@@ -27,12 +27,12 @@
 				</button>
 
 				<ul class="nav__menu" id="primary-menu" data-nav-menu role="list">
-					<li><a class="nav__link" href="index.html">Home</a></li>
-					<li><a class="nav__link" href="divorce.html">Pricing</a></li>
-					<li><a class="nav__link" href="resources.html">Resources</a></li>
-					<li><a class="nav__link" href="disclaimer.html">Disclaimer</a></li>
-					<li><a class="nav__link" href="contact-us.html" aria-current="page">Contact</a></li>
-					<li class="nav__cta"><a class="btn btn--accent" href="contact-us.html">Start Online</a></li>
+					<li><a class="nav__link" href="home">Home</a></li>
+					<li><a class="nav__link" href="divorce">Pricing</a></li>
+					<li><a class="nav__link" href="resources">Resources</a></li>
+					<li><a class="nav__link" href="disclaimer">Disclaimer</a></li>
+					<li><a class="nav__link" href="contact-us" aria-current="page">Contact</a></li>
+					<li class="nav__cta"><a class="btn btn--accent" href="contact-us">Start Online</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -278,9 +278,28 @@
 							</div>
 						</div>
 
+						<div class="form-section" data-payment-section>
+							<div class="form-section__header">
+								<h2>Payment</h2>
+								<p>Pay securely now through Square (card, Apple Pay, Google Pay and more), or submit now and pay later.</p>
+							</div>
+
+							<fieldset class="fieldset-radios">
+								<legend class="sr-only">Payment preference</legend>
+								<label class="radio-option">
+									<input type="radio" name="paymentChoice" value="now" required>
+									<span>Pay <span data-pay-price>$159.95</span> now through Square</span>
+								</label>
+								<label class="radio-option">
+									<input type="radio" name="paymentChoice" value="later" required>
+									<span>Pay later, submit my information now</span>
+								</label>
+							</fieldset>
+						</div>
+
 						<div class="form-actions">
 							<button type="submit" class="btn btn--primary">Submit your information</button>
-							<a class="btn btn--ghost" href="contact-us.html">Cancel</a>
+							<a class="btn btn--ghost" href="contact-us">Cancel</a>
 						</div>
 
 						<div class="form-status" data-form-status hidden></div>
@@ -293,10 +312,10 @@
 						</div>
 						<h2>Thank you. Your information was received.</h2>
 						<p class="lead" style="margin-inline: auto;">We'll be in touch shortly to confirm next steps. If you have questions in the meantime, call (580) 656-2669.</p>
-						<p style="color: var(--color-text-muted); margin-top: var(--space-5);">Want to expedite your filing? You can pay your service fee online now.</p>
+						<p style="margin-inline: auto; margin-top: var(--space-4);" data-success-confirmation hidden></p>
+						<p style="color: var(--color-text-muted); margin-top: var(--space-5);" data-success-payment></p>
 						<div class="form-success__actions">
-							<a class="btn btn--accent" data-pay-btn href="#" hidden>Pay <span data-pay-price>$159.95</span> to expedite</a>
-							<a class="btn btn--ghost" href="index.html">Back to home</a>
+							<a class="btn btn--ghost" href="home">Back to home</a>
 						</div>
 						<p style="color: var(--color-text-muted); font-size: 0.875rem; margin-top: var(--space-4);">If your spouse cannot be located, the fee is <strong>$209.95</strong> instead. We'll confirm the correct amount once we review your submission. Call (580) 656-2669 with any questions.</p>
 					</div>
@@ -317,11 +336,11 @@
 				<div>
 					<h4>Site</h4>
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="divorce.html">Pricing</a></li>
-						<li><a href="resources.html">Resources</a></li>
-						<li><a href="disclaimer.html">Disclaimer</a></li>
-						<li><a href="contact-us.html">Contact</a></li>
+						<li><a href="home">Home</a></li>
+						<li><a href="divorce">Pricing</a></li>
+						<li><a href="resources">Resources</a></li>
+						<li><a href="disclaimer">Disclaimer</a></li>
+						<li><a href="contact-us">Contact</a></li>
 					</ul>
 				</div>
 				<div>
