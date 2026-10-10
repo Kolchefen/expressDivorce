@@ -1,4 +1,9 @@
+# Stop Apache guessing files for extensionless URLs (it served contact-us.js for /contact-us)
+Options -MultiViews
+
 RewriteEngine On
+# Needed on IONOS so relative rewrites (index.html, $1.html) resolve from the site root
+RewriteBase /
 
 # Force HTTPS (the X-Forwarded-Proto check prevents a redirect loop behind a proxy)
 RewriteCond %{HTTPS} off
