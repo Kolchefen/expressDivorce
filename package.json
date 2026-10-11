@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "node dev-server.js",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^10.7.3"
+  }
+}

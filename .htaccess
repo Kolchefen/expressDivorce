@@ -1,9 +1,35 @@
+# Stop Apache guessing files for extensionless URLs (it served contact-us.js for /contact-us)
+Options -MultiViews
+
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)\.html$ /$1 [L,R=301]
+# Needed on IONOS so relative rewrites (index.html, $1.html) resolve from the site root
+RewriteBase /
 
-# Redirect root to home.html
+# Force HTTPS (the X-Forwarded-Proto check prevents a redirect loop behind a proxy)
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Show /home in the address bar for the homepage (root, /index and /index.html)
+# THE_REQUEST only matches what the browser asked for, so the internal rewrites below can't loop
 RewriteRule ^$ /home [L,R=301]
+RewriteCond %{THE_REQUEST} \s/index(\.html)?[\s?]
+RewriteRule ^ /home [L,R=301]
 
-DirectoryIndex home.html
+# Remove .html from the address bar (/contact-us.html -> /contact-us)
+RewriteCond %{THE_REQUEST} \s/([^\s?]+)\.html[\s?]
+RewriteRule ^ /%1 [L,R=301]
+
+# Remove trailing slashes (/contact-us/ -> /contact-us) so relative css/js paths keep working
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+# Serve index.html at /home
+RewriteRule ^home$ index.html [L]
+
+# Serve /page from page.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+DirectoryIndex index.html
