@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario de divorcio sin hijos menores | Express Divorce</title>
+	<meta name="description" content="Envíe su información para comenzar un divorcio de mutuo acuerdo en Oklahoma. Para parejas sin hijos menores.">
+	<link rel="canonical" href="https://expressdivorce.org/divorcio-sin-hijos">
+	<link rel="alternate" hreflang="en" href="https://expressdivorce.org/divorceWithOut">
+	<link rel="alternate" hreflang="es" href="https://expressdivorce.org/divorcio-sin-hijos">
+	<link rel="alternate" hreflang="x-default" href="https://expressdivorce.org/divorceWithOut">
+	<link rel="icon" type="image/x-icon" href="image/favicon.ico">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Teko:wght@500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/modern.css">
+</head>
+<body>
+
+	<header class="site-header">
+		<div class="container">
+			<nav class="nav" data-nav aria-label="Principal">
+				<a class="brand" href="espanol">
+					<span class="brand__mark" aria-hidden="true">ED</span>
+					<span>Express Divorce</span>
+				</a>
+
+				<button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menú">
+					<svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+					<svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+				</button>
+
+				<ul class="nav__menu" id="primary-menu" data-nav-menu role="list">
+					<li><a class="nav__link" href="espanol">Inicio</a></li>
+					<li><a class="nav__link" href="precios">Precios</a></li>
+					<li><a class="nav__link" href="preguntas-frecuentes">Preguntas</a></li>
+					<li><a class="nav__link" href="recursos">Recursos</a></li>
+					<li><a class="nav__link" href="aviso-legal">Aviso legal</a></li>
+					<li><a class="nav__link" href="contacto" aria-current="page">Contacto</a></li>
+					<li><a class="nav__link" href="divorceWithOut" lang="en" hreflang="en">English</a></li>
+					<li class="nav__cta"><a class="btn btn--accent" href="contacto">Comenzar</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+
+		<section class="hero">
+			<div class="container">
+				<div class="hero__inner">
+					<p class="eyebrow">Formulario en línea</p>
+					<h1>Divorcio sin hijos menores</h1>
+					<p class="lead">Llene este formulario si usted y su cónyuge no tienen hijos menores juntos. Enviarlo es gratis; el pago en línea es opcional y solo agiliza el proceso.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<form class="form form-page" data-form data-variant="divorceWithOut" novalidate>
+
+					<div class="form-actual">
+
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Su información</h2>
+								<p>Nombre legal completo actual.</p>
+							</div>
+							<div class="form-grid form-grid--names">
+								<div class="field">
+									<label for="prefix">Título</label>
+									<select id="prefix" name="prefix">
+										<option value=""></option>
+										<option value="Mr.">Sr. (Mr.)</option><option value="Mrs.">Sra. (Mrs.)</option><option value="Miss.">Srta. (Miss)</option>
+										<option value="Ms.">Ms.</option><option value="Mx.">Mx.</option><option value="Dr.">Dr.</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="firstName">Nombre<span class="required">*</span></label>
+									<input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+								</div>
+								<div class="field">
+									<label for="middleName">Segundo nombre</label>
+									<input type="text" id="middleName" name="middleName" autocomplete="additional-name">
+								</div>
+								<div class="field">
+									<label for="lastName">Apellido(s)<span class="required">*</span></label>
+									<input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+								</div>
+								<div class="field">
+									<label for="suffix">Sufijo</label>
+									<input type="text" id="suffix" name="suffix" autocomplete="honorific-suffix">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Cambio de nombre</h2>
+								<p>¿Desea volver a usar el nombre que tenía antes del matrimonio?</p>
+							</div>
+
+							<fieldset class="fieldset-radios">
+								<legend class="sr-only">Preferencia de cambio de nombre</legend>
+								<label class="radio-option">
+									<input type="radio" name="nameChange" value="Yes" required>
+									<span>Sí, quiero recuperar mi nombre anterior</span>
+								</label>
+								<label class="radio-option">
+									<input type="radio" name="nameChange" value="No" required>
+									<span>No, quiero conservar mi nombre actual</span>
+								</label>
+								<label class="radio-option">
+									<input type="radio" name="nameChange" value="Name did not change for marriage" required>
+									<span>Mi nombre no cambió por el matrimonio</span>
+								</label>
+							</fieldset>
+
+							<p class="field__help" style="margin-top: var(--space-4);">Si respondió que sí, escriba el nombre que desea recuperar:</p>
+							<div class="form-grid form-grid--names" style="margin-top: var(--space-2);">
+								<div class="field">
+									<label for="newPrefix">Título</label>
+									<select id="newPrefix" name="newPrefix">
+										<option value=""></option>
+										<option value="Mr.">Sr. (Mr.)</option><option value="Mrs.">Sra. (Mrs.)</option><option value="Miss.">Srta. (Miss)</option>
+										<option value="Ms.">Ms.</option><option value="Mx.">Mx.</option><option value="Dr.">Dr.</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="newFirstName">Nombre</label>
+									<input type="text" id="newFirstName" name="newFirstName">
+								</div>
+								<div class="field">
+									<label for="newMiddleName">Segundo nombre</label>
+									<input type="text" id="newMiddleName" name="newMiddleName">
+								</div>
+								<div class="field">
+									<label for="newLastName">Apellido(s)</label>
+									<input type="text" id="newLastName" name="newLastName">
+								</div>
+								<div class="field">
+									<label for="newSuffix">Sufijo</label>
+									<input type="text" id="newSuffix" name="newSuffix">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Su dirección actual</h2>
+							</div>
+							<div class="form-grid">
+								<div class="field">
+									<label for="streetAddress">Dirección<span class="required">*</span></label>
+									<input type="text" id="streetAddress" name="streetAddress" autocomplete="address-line1" required>
+								</div>
+								<div class="field">
+									<label for="streetAddress2">Dirección, línea 2</label>
+									<input type="text" id="streetAddress2" name="streetAddress2" autocomplete="address-line2">
+								</div>
+							</div>
+							<div class="form-grid form-grid--csz" style="margin-top: var(--space-4);">
+								<div class="field">
+									<label for="city">Ciudad<span class="required">*</span></label>
+									<input type="text" id="city" name="city" autocomplete="address-level2" required>
+								</div>
+								<div class="field">
+									<label for="state">Estado<span class="required">*</span></label>
+									<input type="text" id="state" name="state" autocomplete="address-level1" required>
+								</div>
+								<div class="field">
+									<label for="zipCode">Código postal<span class="required">*</span></label>
+									<input type="text" id="zipCode" name="zipCode" autocomplete="postal-code" required>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Información de su cónyuge</h2>
+								<p>Nombre legal completo.</p>
+							</div>
+							<div class="form-grid form-grid--names">
+								<div class="field">
+									<label for="spousePrefix">Título</label>
+									<select id="spousePrefix" name="spousePrefix">
+										<option value=""></option>
+										<option value="Mr.">Sr. (Mr.)</option><option value="Mrs.">Sra. (Mrs.)</option><option value="Miss.">Srta. (Miss)</option>
+										<option value="Ms.">Ms.</option><option value="Mx.">Mx.</option><option value="Dr.">Dr.</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="spouseFirstName">Nombre<span class="required">*</span></label>
+									<input type="text" id="spouseFirstName" name="spouseFirstName" required>
+								</div>
+								<div class="field">
+									<label for="spouseMiddleName">Segundo nombre</label>
+									<input type="text" id="spouseMiddleName" name="spouseMiddleName">
+								</div>
+								<div class="field">
+									<label for="spouseLastName">Apellido(s)<span class="required">*</span></label>
+									<input type="text" id="spouseLastName" name="spouseLastName" required>
+								</div>
+								<div class="field">
+									<label for="spouseSuffix">Sufijo</label>
+									<input type="text" id="spouseSuffix" name="spouseSuffix">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Dirección actual de su cónyuge</h2>
+								<p>Déjelo en blanco si no la sabe.</p>
+							</div>
+							<div class="form-grid">
+								<div class="field">
+									<label for="spouseStreetAddress">Dirección</label>
+									<input type="text" id="spouseStreetAddress" name="spouseStreetAddress">
+								</div>
+								<div class="field">
+									<label for="spouseStreetAddress2">Dirección, línea 2</label>
+									<input type="text" id="spouseStreetAddress2" name="spouseStreetAddress2">
+								</div>
+							</div>
+							<div class="form-grid form-grid--csz" style="margin-top: var(--space-4);">
+								<div class="field">
+									<label for="spouseCity">Ciudad</label>
+									<input type="text" id="spouseCity" name="spouseCity">
+								</div>
+								<div class="field">
+									<label for="spouseState">Estado</label>
+									<input type="text" id="spouseState" name="spouseState">
+								</div>
+								<div class="field">
+									<label for="spouseZipCode">Código postal</label>
+									<input type="text" id="spouseZipCode" name="spouseZipCode">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Información del matrimonio</h2>
+							</div>
+							<div class="form-grid form-grid--2">
+								<div class="field">
+									<label for="dateOfMarriage">Fecha del matrimonio<span class="required">*</span></label>
+									<input type="date" id="dateOfMarriage" name="dateOfMarriage" required>
+								</div>
+								<div class="field">
+									<label for="marriageLocation">Ciudad y estado del matrimonio<span class="required">*</span></label>
+									<input type="text" id="marriageLocation" name="marriageLocation" placeholder="Ciudad, Estado" required>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Bienes y deudas</h2>
+								<p>Opcional. Indique los bienes o deudas que quiera que se traten específicamente.</p>
+							</div>
+							<div class="field">
+								<label for="assetsDebts">Bienes y deudas</label>
+								<textarea id="assetsDebts" name="assetsDebts" placeholder="Artículo, cantidad, distribución del pago (cuánto quiere pagar usted y cuánto quiere que pague su cónyuge)"></textarea>
+							</div>
+						</div>
+
+						<div class="form-section">
+							<div class="form-section__header">
+								<h2>Información de contacto</h2>
+								<p>Cómo nos comunicaremos con usted sobre su trámite.</p>
+							</div>
+							<div class="form-grid form-grid--2">
+								<div class="field">
+									<label for="phoneNumber">Teléfono<span class="required">*</span></label>
+									<input type="tel" id="phoneNumber" name="phoneNumber" autocomplete="tel" placeholder="(000) 000-0000" required>
+								</div>
+								<div class="field">
+									<label for="email">Correo electrónico<span class="required">*</span></label>
+									<input type="email" id="email" name="email" autocomplete="email" placeholder="usted@ejemplo.com" required>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-section" data-payment-section>
+							<div class="form-section__header">
+								<h2>Pago</h2>
+								<p>Pague ahora de forma segura con Square (tarjeta, Apple Pay, Google Pay y más), o envíe su información ahora y pague después.</p>
+							</div>
+
+							<fieldset class="fieldset-radios">
+								<legend class="sr-only">Preferencia de pago</legend>
+								<label class="radio-option">
+									<input type="radio" name="paymentChoice" value="now" required>
+									<span>Pagar <span data-pay-price>$159.95</span> ahora con Square</span>
+								</label>
+								<label class="radio-option">
+									<input type="radio" name="paymentChoice" value="later" required>
+									<span>Pagar después, enviar mi información ahora</span>
+								</label>
+							</fieldset>
+						</div>
+
+						<div class="form-actions">
+							<button type="submit" class="btn btn--primary">Enviar su información</button>
+							<a class="btn btn--ghost" href="contacto">Cancelar</a>
+						</div>
+
+						<div class="form-status" data-form-status hidden></div>
+
+					</div>
+
+					<div class="form-success" role="status" aria-live="polite">
+						<div class="form-success__icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+						</div>
+						<h2>Gracias. Recibimos su información.</h2>
+						<p class="lead" style="margin-inline: auto;">Nos comunicaremos con usted pronto para confirmar los siguientes pasos. Si tiene preguntas mientras tanto, llame al (580) 656-2669.</p>
+						<p style="margin-inline: auto; margin-top: var(--space-4);" data-success-confirmation hidden></p>
+						<p style="color: var(--color-text-muted); margin-top: var(--space-5);" data-success-payment></p>
+						<div class="form-success__actions">
+							<a class="btn btn--ghost" href="espanol">Volver al inicio</a>
+						</div>
+						<p style="color: var(--color-text-muted); font-size: 0.875rem; margin-top: var(--space-4);">Si no se puede localizar a su cónyuge, la tarifa es de <strong>$209.95</strong>. Confirmaremos la cantidad correcta cuando revisemos su información. Llame al (580) 656-2669 si tiene preguntas.</p>
+					</div>
+
+				</form>
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer__brand">
+					<h4>Express Divorce Services</h4>
+					<p>Divorcios de mutuo acuerdo y preparación de documentos legales en Oklahoma. Al servicio de clientes en todo el país desde 2003.</p>
+				</div>
+				<div>
+					<h4>Sitio</h4>
+					<ul>
+						<li><a href="espanol">Inicio</a></li>
+						<li><a href="precios">Precios</a></li>
+						<li><a href="costo-del-divorcio">Costo del divorcio en Oklahoma</a></li>
+						<li><a href="preguntas-frecuentes">Preguntas frecuentes</a></li>
+						<li><a href="divorceWithOut" lang="en" hreflang="en">English</a></li>
+						<li><a href="recursos">Recursos</a></li>
+						<li><a href="aviso-legal">Aviso legal</a></li>
+						<li><a href="contacto">Contacto</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4>Contacto</h4>
+					<ul>
+						<li><a href="tel:15806562669">(580) 656-2669</a></li>
+						<li><a href="mailto:lesliedawngolden@yahoo.com">Envíenos un correo</a></li>
+					</ul>
+				</div>
+			</div>
+			<p class="footer__bottom">© 2003–2026 Express Divorce Services. Todos los derechos reservados.</p>
+		</div>
+	</footer>
+
+	<script src="src/nav.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script src="src/form-config.js"></script>
+	<script src="src/form.js" defer></script>
+
+</body>
+</html>

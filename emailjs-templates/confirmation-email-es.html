@@ -1,0 +1,28 @@
+<!--
+	Spanish EmailJS template for the customer confirmation email sent from the
+	Spanish forms. Create it as a new template in EmailJS (subject suggestion:
+	"Recibimos su información"), paste everything below this comment into the
+	Content field using the code editor (the "<>" button), then put its
+	Template ID in confirmationTemplateEs in src/form-config.js. Not used by
+	the website itself.
+-->
+<div style="font-family: Arial, Helvetica, sans-serif; color: #1f2933; max-width: 600px; margin: 0 auto;">
+
+	<h1 style="font-size: 20px; margin: 0 0 16px;">Recibimos su información</h1>
+
+	<p style="font-size: 15px; line-height: 1.5;">Hola, {{firstName}}:</p>
+
+	<p style="font-size: 15px; line-height: 1.5;">Gracias por elegir Express Divorce Services. Su formulario de <strong>{{formType}}</strong> se envió correctamente y nos comunicaremos con usted pronto para confirmar los siguientes pasos.</p>
+
+	<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin: 20px 0; background: #f5f7fa; border: 1px solid #d9e2ec;">
+		<tr><td style="padding: 12px 14px; font-size: 14px;">
+			<strong>Pago:</strong> {{paymentStatus}}
+		</td></tr>
+	</table>
+
+	<p style="font-size: 15px; line-height: 1.5;">Si tiene preguntas mientras tanto, llame al <strong>(580) 656-2669</strong> o responda a este correo. Hablamos español.</p>
+
+	<p style="font-size: 15px; line-height: 1.5;">Express Divorce Services</p>
+
+	<p style="font-size: 12px; color: #7b8794; margin-top: 28px;">Recibe este correo porque esta dirección se escribió en el formulario de expressdivorce.org. Si no fue usted, llame al (580) 656-2669 o responda a este correo para avisarnos.</p>
+</div>

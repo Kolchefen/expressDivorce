@@ -19,6 +19,47 @@
 	const squareConfigured = squareUrl && !squareUrl.startsWith('SQUARE_');
 	const price = config && config.pricing && config.pricing[variant];
 
+	// Customer-facing text follows the page language. Field values and the
+	// staff notification email stay in English either way.
+	const strings = {
+		en: {
+			notConfigured: 'This form is not yet configured for live submissions. Please call (580) 656-2669 or email lesliedawngolden@yahoo.com to start your filing.',
+			continueToPayment: 'Continue to secure payment',
+			sending: 'Sending…',
+			redirecting: 'Redirecting to Square…',
+			confirmationSent: (email) => 'A confirmation email is on its way to ' + email
+				+ ". If you don't see it within a few minutes, please check your spam or junk folder"
+				+ ' and mark it "Not spam" so our future emails reach your inbox.',
+			paidSuccess: 'Your payment was received. Square will email your receipt.',
+			laterSuccess: "You chose to pay later. We'll send you a secure payment link once we've reviewed your information.",
+			sendError: 'Something went wrong while sending your submission. Please try again, or call (580) 656-2669.',
+			paidNotice: 'Your payment was received. Please complete the form below and submit it; it will be marked as paid.',
+			storageError: 'Your browser could not save the form before payment. Please choose "Pay later", or call (580) 656-2669.',
+			formType: variant === 'divorceWith' ? 'Divorce with minor children' : 'Divorce without minor children',
+			confirmationPaid: 'Paid online. Square will email your receipt separately.',
+			confirmationLater: "Not yet paid. We'll send you a secure payment link after we review your information."
+		},
+		es: {
+			notConfigured: 'Este formulario todavía no está listo para recibir información. Llame al (580) 656-2669 o escriba a lesliedawngolden@yahoo.com para comenzar su trámite.',
+			continueToPayment: 'Continuar al pago seguro',
+			sending: 'Enviando…',
+			redirecting: 'Redirigiendo a Square…',
+			confirmationSent: (email) => 'Le enviamos un correo de confirmación a ' + email
+				+ '. Si no lo ve en unos minutos, revise su carpeta de correo no deseado (spam)'
+				+ ' y márquelo como "No es spam" para que nuestros próximos correos lleguen a su bandeja de entrada.',
+			paidSuccess: 'Recibimos su pago. Square le enviará su recibo por correo.',
+			laterSuccess: 'Usted eligió pagar después. Le enviaremos un enlace de pago seguro cuando hayamos revisado su información.',
+			sendError: 'Algo salió mal al enviar su información. Inténtelo de nuevo o llame al (580) 656-2669.',
+			paidNotice: 'Recibimos su pago. Complete el formulario de abajo y envíelo; se marcará como pagado.',
+			storageError: 'Su navegador no pudo guardar el formulario antes del pago. Elija "Pagar después" o llame al (580) 656-2669.',
+			formType: variant === 'divorceWith' ? 'Divorcio con hijos menores' : 'Divorcio sin hijos menores',
+			confirmationPaid: 'Pagado en línea. Square le enviará su recibo por separado.',
+			confirmationLater: 'Pendiente de pago. Le enviaremos un enlace de pago seguro después de revisar su información.'
+		}
+	};
+	const spanish = document.documentElement.lang === 'es';
+	const text = spanish ? strings.es : strings.en;
+
 	if (price) form.querySelectorAll('[data-pay-price]').forEach((el) => { el.textContent = price; });
 
 	const showStatus = (kind, message) => {
@@ -31,7 +72,7 @@
 	const hideStatus = () => { if (status) status.hidden = true; };
 
 	if (!emailjsConfigured) {
-		showStatus('info', 'This form is not yet configured for live submissions. Please call (580) 656-2669 or email lesliedawngolden@yahoo.com to start your filing.');
+		showStatus('info', text.notConfigured);
 		if (submitBtn) submitBtn.disabled = true;
 		return;
 	}
@@ -47,6 +88,7 @@
 	// don't linger on shared computers.
 	const pendingKey = 'pendingSubmission:' + variant;
 	const paymentKey = 'squarePayment:' + variant;
+	const returnKey = 'returnPath:' + variant;
 	const maxAgeMs = 24 * 60 * 60 * 1000;
 
 	const readStored = (key) => {
@@ -63,7 +105,7 @@
 		try { localStorage.setItem(key, JSON.stringify({ savedAt: Date.now(), value: value })); return true; } catch (err) { return false; }
 	};
 	const clearStored = () => {
-		try { localStorage.removeItem(pendingKey); localStorage.removeItem(paymentKey); } catch (err) { /* ignore */ }
+		try { localStorage.removeItem(pendingKey); localStorage.removeItem(paymentKey); localStorage.removeItem(returnKey); } catch (err) { /* ignore */ }
 	};
 
 	const choiceInput = (value) => form.querySelector('input[name="paymentChoice"][value="' + value + '"]');
@@ -89,6 +131,12 @@
 	// Square appends orderId/transactionId to the redirect URL after checkout.
 	// This is reported by the browser, so staff should confirm it in Square.
 	const params = new URLSearchParams(window.location.search);
+	const returnPath = readStored(returnKey);
+	if ((params.get('orderId') || params.get('transactionId')) && returnPath && returnPath !== window.location.pathname) {
+		// Square always returns to the English form; finish on the page they paid from.
+		window.location.replace(returnPath + window.location.search);
+		return;
+	}
 	let payment = null;
 	if (params.get('orderId') || params.get('transactionId')) {
 		const orderId = params.get('orderId') || params.get('transactionId');
@@ -107,7 +155,7 @@
 	const submitLabel = submitBtn ? submitBtn.textContent : 'Submit';
 	const updateSubmitLabel = () => {
 		if (!submitBtn || submitBtn.disabled) return;
-		submitBtn.textContent = payNowSelected() && !payment ? 'Continue to secure payment' : submitLabel;
+		submitBtn.textContent = payNowSelected() && !payment ? text.continueToPayment : submitLabel;
 	};
 
 	const setBusy = (text) => {
@@ -127,27 +175,30 @@
 	// logged but not shown, because the submission itself already went through.
 	// Returns whether a confirmation was attempted.
 	const sendConfirmation = (fields) => {
-		const templateId = config.emailjs.confirmationTemplate;
+		// Spanish pages use the Spanish template when one is configured;
+		// otherwise everyone gets the English template with English text.
+		const spanishTemplate = config.emailjs.confirmationTemplateEs;
+		const useSpanish = spanish && spanishTemplate && !spanishTemplate.startsWith('EMAILJS_');
+		const templateId = useSpanish ? spanishTemplate : config.emailjs.confirmationTemplate;
 		if (!templateId || templateId.startsWith('EMAILJS_') || !fields.email) return false;
 
+		const words = useSpanish ? strings.es : strings.en;
 		emailjs.send(config.emailjs.serviceId, templateId, {
 			email: fields.email,
 			firstName: fields.firstName,
 			lastName: fields.lastName,
-			formType: variant === 'divorceWith' ? 'Divorce with minor children' : 'Divorce without minor children',
-			paymentStatus: payment
-				? 'Paid online. Square will email your receipt separately.'
-				: "Not yet paid. We'll send you a secure payment link after we review your information."
+			formType: words.formType,
+			paymentStatus: payment ? words.confirmationPaid : words.confirmationLater
 		}).catch((err) => console.error('Confirmation email failed:', err));
 		return true;
 	};
 
 	const send = async (fields) => {
 		hideStatus();
-		setBusy('Sending…');
+		setBusy(text.sending);
 
 		const templateParams = Object.assign({}, fields, {
-			formType: variant === 'divorceWith' ? 'Divorce with minor children' : 'Divorce without minor children'
+			formType: strings.en.formType + (spanish ? ' (submitted in Spanish)' : '')
 		}, payment
 			? {
 				paymentStatus: 'PAID online via Square (confirm in Square before filing)',
@@ -165,21 +216,17 @@
 			await emailjs.send(config.emailjs.serviceId, config.emailjs.templates[variant], templateParams);
 			clearStored();
 			if (sendConfirmation(fields) && successConfirmation) {
-				successConfirmation.textContent = 'A confirmation email is on its way to ' + fields.email
-					+ ". If you don't see it within a few minutes, please check your spam or junk folder"
-					+ ' and mark it "Not spam" so our future emails reach your inbox.';
+				successConfirmation.textContent = text.confirmationSent(fields.email);
 				successConfirmation.hidden = false;
 			}
 			if (successPayment) {
-				successPayment.textContent = payment
-					? 'Your payment was received. Square will email your receipt.'
-					: "You chose to pay later. We'll send you a secure payment link once we've reviewed your information.";
+				successPayment.textContent = payment ? text.paidSuccess : text.laterSuccess;
 			}
 			form.dataset.submitted = 'true';
 			form.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		} catch (err) {
 			console.error('Form submission failed:', err);
-			showStatus('error', 'Something went wrong while sending your submission. Please try again, or call (580) 656-2669.');
+			showStatus('error', text.sendError);
 			clearBusy();
 		}
 	};
@@ -200,7 +247,7 @@
 		if (pending) {
 			send(collectFields());
 		} else {
-			showStatus('info', 'Your payment was received. Please complete the form below and submit it; it will be marked as paid.');
+			showStatus('info', text.paidNotice);
 		}
 	}
 
@@ -221,11 +268,11 @@
 		const fields = collectFields();
 
 		if (payNowSelected() && !payment) {
-			if (!writeStored(pendingKey, fields)) {
-				showStatus('error', 'Your browser could not save the form before payment. Please choose "Pay later", or call (580) 656-2669.');
+			if (!writeStored(pendingKey, fields) || !writeStored(returnKey, window.location.pathname)) {
+				showStatus('error', text.storageError);
 				return;
 			}
-			setBusy('Redirecting to Square…');
+			setBusy(text.redirecting);
 			window.location.href = squareUrl;
 			return;
 		}

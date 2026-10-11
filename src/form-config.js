@@ -40,7 +40,11 @@ window.FORM_CONFIG = {
 		// Optional confirmation sent to the customer after a successful
 		// submission (emailjs-templates/confirmation-email.html). Leave as the
 		// placeholder or an empty string to skip it.
-		confirmationTemplate: 'template_lz1t8um'
+		confirmationTemplate: 'template_lz1t8um',
+		// Optional Spanish confirmation for the Spanish forms
+		// (emailjs-templates/confirmation-email-es.html). Until it's set,
+		// Spanish-form customers get the English confirmation above.
+		confirmationTemplateEs: ''
 	},
 	square: {
 		// Payment link URLs used by the "Pay now" option. Leave as empty

@@ -25,7 +25,7 @@
 		if (event.key === 'Escape' && nav.dataset.open === 'true') setOpen(false);
 	});
 
-	const desktop = window.matchMedia('(min-width: 900px)');
+	const desktop = window.matchMedia('(min-width: 1100px)');
 	const sync = () => { if (desktop.matches) setOpen(false); };
 	desktop.addEventListener('change', sync);
 })();
